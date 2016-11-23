@@ -61,7 +61,10 @@ class GovStatsTree:
         self.root=root
         self.queryUrl=queryUrl
         self.dbcode=dbcode
-        self.name=dbcode
+        if name=='root':
+          self.name=main_map_inverse[dbcode]
+        else:
+          self.name=name
         self.postData={'id':self.root,
                 'dbcode':dbcode,
                 'wdcode':'zb',
